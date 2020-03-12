@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Vuejs
+    </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <style>
+        .form {
+            background-color: aqua;
+            width: 30%;
+            margin: 10em auto;
+
+        }
+        .output {
+            background-color: rgb(236, 233, 233);
+            width: 30%;
+            font-weight: 900px;
+            font-family: Arial, sans-serif;
+            margin: 10em auto;
+            text-align: justify;
+            line-height: 6;
+        }
+
+        input[type="text"]{
+            background: transparent;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+        <div class="form col">
+            <div class="form-group">
+              <label>Email address</label>
+              <input type="email" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password"  v-model="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            
+           <button @click="show" class="btn btn-primary">Submit</button>
+        </div>
+
+        <div class=" output col">
+          {{ showemail }} <br>
+          {{ showpassword }}
+        </div>
+    </div>
+    </div>
+</div>
+    <script>
+        new Vue({
+            el:"#app",
+            data(){
+            return {
+                email:'',
+                password:'',
+                showemail:'',
+                showpassword:''
+            }
+            },
+            methods:{
+                show() {
+                    this.showemail = this.email
+                    this.showpassword = this.password
+                    this.email=null
+                    this.password=null
+                }
+            }
+
+        })
+    </script>
+    
+</body>
+</html>
